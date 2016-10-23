@@ -1,0 +1,31 @@
+{% extends 'home/base.html' %}
+
+{% block head %}
+    <script type="text/javascript" async
+      src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+{% endblock %}
+
+{% block content %}
+    <h1 class="title text-center">
+    {{ post.title }}
+    </h1>
+    <div>
+        {% if user.is_authenticated %}
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
+        <div class="col-sm-6 col-sm-offset-3" id="post-no-float">
+            <p>{% autoescape off %} {{ post.text }} {% endautoescape %}</p>
+
+            {% if post.published_date %} <!-- If it has a published date -->
+            <div class="date_specific">
+                {{ post.published_date }}
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}

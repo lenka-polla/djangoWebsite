@@ -1,0 +1,32 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <h2 class="new-post">
+        <a href="#">
+            Create new post
+        </a>
+    </h2>
+    {% endif %}
+
+    {% for post in posts %}
+        <article class="post row">
+            <div class="col-sm-5 blog_post_info">
+                <h1 class="blog_post_title">
+                    <a href="{% url 'post_specific' pk=post.pk %}">
+                        {{ post.title }}
+                    </a>
+                    </h1>
+                <a href="{% url 'post_specific' pk=post.pk %}" class="read_more text-uppercase">Read More</a>
+            </div>
+            <p class="col-sm-5 text-justify">
+                {{ post.text|linebreaksbr }}
+            </p>
+            <div class="col-sm-2 blog_post_info">
+                <h2 class="date">
+                    {{ post.published_date }}
+                </h2>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock %}
