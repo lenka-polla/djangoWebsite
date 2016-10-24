@@ -1,204 +1,304 @@
-nav ul { /*for the nav bar*/
-    list-style-type: none; /*removes bullet points*/
-    margin: 0;
-    padding: 0;
-	padding-left: 10%;
-    overflow: hidden;
-    background-color: #052C42;
-    top: 0; /*very top of the page*/
-    position: fixed; /* Stays at the top of the page */
-    width: 100%;
+/* CSS reset */
+.row, body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+    margin:0;
+    padding:0;
 }
 
-nav li {
-	float: left;
-	border-left: 1px solid #bbb;
+/*~~~~ UNIVERSAL ~~~~*/
+body {
+	font-family: 'Assistant', sans-serif;
+	background-image: url("images/background.jpg");
+}
+ul {
+	list-style-type: none;
+}
+a, a:active {
+	color: black;
+	text-decoration: none;
 }
 
-nav li:last-child {
-    border-right: 1px solid #bbb;
+a:hover {
+	color: rgb(28, 31, 29);
 }
 
-nav li a {
-	display: block;
-	color: white;
-	padding: 8px;
-}
-
-/* Change the link color to #111 (black) on hover */
-nav li a:hover {
-    background-color: #073B59;
+.full-width {
+	margin: 0 auto;
 }
 
 h1 {
-	margin-top: 0;
-	padding-top: 10px;
+	font-family: 'Playfair Display', serif;
 }
 
 p {
-	text-align: justify;
+	font-size: 18px;
+	line-height: 1.4;
 }
 
-form {
-	text-align: center;
-/*	background-color: #DEDEDE;
-*/	border-radius: 25px;
+/* Header */
+
+#share_links li, #nav li{
+	display: inline-block;
+}
+header {
+	width: 100%;
+	padding-top: 35px;
 }
 
-form input {
-	border: none;
-    background: transparent;
-	text-align: center;
-/*	padding-left: 30%;
-	padding-right: 30%;
-*/}
 
-input:focus {
-    outline:none;
+#share_links {
+	padding-top: 15px;
+	float: right;
+}
+#share_links li {
+	padding-left: 10px;
+}
+#logo {
+	font-family: 'Playfair Display', serif;
+	font-style: italic;
+	font-weight: 700;
+	font-size: 50px;
+	float: left;
+	padding-bottom: 40px;
+}
+#share_links img {
+	opacity: .6;
+}
+#share_links img:hover {
+	opacity: 1;
+}
+#nav {
+	clear: both;
 }
 
+
+#nav li{
+	padding: 0 20 0 20px;
+	margin-bottom: 3px;
+	font-size: 18px;
+}
+
+.nav-bar {  /*BIG BLACK BAR*/
+	margin-top: 2px;
+	padding: 0;
+	height: 22px;
+	background-color: rgb(28, 31, 29);
+}
+
+.nav-bar-text {
+	font-family: 'Playfair Display', serif;
+	padding: 1px 20 0 20px;
+	margin-bottom: 3px;
+	font-size: 16px;
+	color: white;
+	float: right;
+	opacity: 0.95;
+}
+
+.nav-bar-text:hover {
+	color: white;
+	text-decoration: none;
+}
+
+/*~~~~ FOOTER ~~~~*/
+footer {
+	height: 22px;
+	background-color: rgb(28, 31, 29);
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+/*~~~~ HOME PAGE ~~~~*/
 .title {
-	padding-top: 5%;
-	text-align: center;
-    font-family: 'PT Sans', sans-serif;
-    color: #3F5B6B;
+	padding: 30px 0 30px 0;
 }
 
-.subtitle {
-	padding-top: 3%;
-	text-align: center;
-    font-family: 'PT Sans', sans-serif;
-    color: #3F5B6B;
-    font-size: 24;
+/*~~~~ BLOG POSTS ~~~~*/
+.new-post {
+	margin-top: 2px;
+	padding: 0;
+	height: 22px;
+	background-color: rgb(28, 31, 29);
 }
-
-.blog_post_title {
-	padding-top: 3%;
-	text-align: left;
-    font-family: 'PT Sans', sans-serif;
-    color: #3F5B6B;
-    font-size: 26;
+.new-post a {
+	padding-top: 2px;
+	margin-right: 5px;
+	color: white;
+	font-size: 14px;
+	font-style: italic;
+	float: right;
 }
-
 .post {
-	text-align: left;
-	padding-left: 3%;
-	padding-right: 3%;
-    background-color: #DEDEDE;
-    font-size: 18;
-	border-radius: 15px;
-	margin-bottom: 3%;
-	padding-bottom: 3%;
+	margin-bottom: 30px;
+	border-top: solid 1px #7D7D7F;
+	padding-top: 30px;
+	height: 250px;
+	overflow-y: hidden;
 }
 
+.blog_post_info {
+	float: left;
+	padding-top: 0px;
+	padding-left: 0px;
+}
+.blog_post_title {
+	float: right;
+	font-size: 28px;
+}
 .date {
-	font-size: 12;
-	padding-bottom: 5%;
+	float: right;
+	clear: both;
+	font-size: 14px;
+	padding-top: 7px;
+}
+.date_specific {
+	margin-top: 30px;
+}
+.read_more {
+	float: right;
+	clear: both;
+	padding: 5px;
+	background-color: rgb(28, 31, 29);
+	color: white;
+	font-style: italic;
+	margin-top: 10px;
+}
+.read_more:hover {
+	color: #CCCCCC;
 }
 
-.questions {
-    font-size: 18;
+
+
+
+#post-no-float {
+	float: none;
 }
 
-.results {
-    font-size: 12;
+#blog-navigation {
+    display: table;
+	padding-top: 2px;
+	margin-left: 5px;
+	width: 100%;
+	color: white;
+	font-size: 12px;
+	font-style: italic;
 }
 
-li.results {
-	padding-bottom: 20px;
+#blog-navigation li {
+	font-size: 2px;
+	display: inline-block;
+	width: 32.9%;
+	padding-right: 5px;
 }
 
-.background { /*Furthest white background*/
-/*	background-image: url("images/background2.jpg");
-*/
-	background-color: #DEDEDE;
-    background-attachment: fixed;
-	padding-bottom: 20px;
-	margin: 0;
+#page-number {
+	color: #b3b3b3;
 }
 
-.main_container {
-	background-color: #ccccff;
-	height: auto !important; /*Fills the box to the bottom*/
-	height: 100%;
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-bottom: 2%;
-	margin-top: 35px;
-	padding-left: 10%;
-	padding-right: 10%;	
-	padding-bottom: 2%;
-	border-radius: 0px 0px 25px 25px;
+#prevpage {
+	text-align: left;
+	color: white;
 }
+
+#nextpage {
+	text-align: right;
+	color: white;
+	width: 100%;
+}
+
+.description {
+	font-style: italic;
+}
+
+#white {
+	color: white;
+}
+
+ol {
+	background: #F2F2F2 repeat-y;
+	overflow:auto;
+	font-family:"Courier New",Courier,mono;
+	padding-left:3em;
+	color:#036;
+	width:90%;
+	margin: 10px 0 10px 0;
+	min-height: 20px;
+}
+ol li {
+	background:#F2F2F2;
+	line-height:1.5em;
+	font-size:small;
+}
+ol code {
+	color:#036;
+}
+
+
+/*~~~~~ POLLS ~~~~~~*/
 
 .poll_list {
-	background-color: #DEDEDE;
 	height: auto !important; /*Fills the box to the bottom*/
 	width: 50%;
 	border-radius: 15px;
-	border: 3px solid #052C42;c
-	margin-top: 6%;
+	/*border: 1px solid #F2F2F2;*/
+	border: 1px solid rgb(28, 31, 29);;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
     list-style-type: none; /*removes bullet points*/
-    padding-left: 4%;
 	text-align: center;
 }
 
-.create_poll_green { /*found on /polls/ to prompt user to create*/
-	background-color: #4CAF50;
-	box-shadow: 3px 3px 2px #888888; /*h-shadow v-shadow blur spread color*/
-	border-radius: 15px;
-	border: 2px solid #052C42;
-	width: 25%;
+.new_poll_list {
+	padding-top: 10px;
+}
+
+.newest_questions {
+	margin-top: 30px;
+    font-size: 24;
+}
+
+.create_poll {
+	float: right;
+	clear: both;
+	padding: 5px;
+	background-color: rgb(28, 31, 29);
+	color: white;
+	font-style: italic;
+	margin-top: 10px;
     position: absolute;
-    top: 40%;
-    left: 55%;
-    color: white;
-    padding-top: 7px;
-    padding-bottom: 4px;
+    top: 65%;
+    left: 60%;
     font-size: 30;
+}
+.create_poll:hover {
+	color: #CCCCCC;
+	text-decoration: none;
+}
+
+.results_left {
+	width: 50%;
+	padding-left: 30%;
+	float: left;
+}
+
+#chart_div {
+	margin-left: 50%;
+}
+
+#break_few_lines {
+	margin-top: 50px;
+}
+
+/*label[for=id_question_text], label[for=id_0-choice_text], label[for=id_1-choice_text], label[for=id_2-choice_text], label[for=id_3-choice_text] {
+	float: left;
+}
+*/
+input[id=id_question_text], input[id=id_0-choice_text], input[id=id_1-choice_text], input[id=id_2-choice_text], input[id=id_3-choice_text] {
+	float: right;
+	margin-right: 15%;
+	margin-left: -20%;
+	width: 279px;
 	text-align: center;
-	font-weight: 30;
 }
-
-.create_poll_green:hover {
-	background-color: #3e8e41;
-}
-
-.create_poll_green:active {
-  background-color: #3e8e41;
-  box-shadow: 3px 3px 2px #888888;
-  transform: translateY(4px);
-}
-
-.create_poll_green:focus {outline:0;}
-
-.input_question_title {
-/*	background-color: #073B59;
-*/	padding: 0 20px;
-}
-
-.create_poll_button { /*found on /polls/create, actually inputted into database*/
-	background-color: #4CAF50;
-	box-shadow: 3px 3px 2px #888888; /*h-shadow v-shadow blur spread color*/
-	border-radius: 15px;
-	border: 2px solid #052C42;
-	width: 35%;
-    color: white;
-    padding-top: 7px;
-    padding-bottom: 4px;
-    font-size: 30;
-	font-weight: 30;
-    position: absolute;
-}
-
-.create_poll_button:hover {
-	background-color: #3e8e41;
-}
-
-.create_poll_button:active {
-  background-color: #3e8e41;
-  box-shadow: 3px 3px 2px #888888;
-  transform: translateY(4px);
-}
-
-.create_poll_button:focus {outline:0;}

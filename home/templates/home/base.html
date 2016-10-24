@@ -11,6 +11,15 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">   
         <script src="{% static 'js/jquery-3.1.0.min.js' %}"></script>
         <script src="{% static 'js/rango-jquery.js' %}"></script>
+        <script type="text/javascript" async
+      src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        
+
+
         {% block head %}{% endblock %}
     </head>
 
@@ -18,30 +27,37 @@
 
 
     <body class="container">
+    <!-- Define any Mathjax commands i might need -->
+        $\newcommand{\braket}[1]{\langle #1 \rangle}
+            \newcommand{\bra}[1]{\langle #1 |}
+            \newcommand{\ket}[1]{| #1 \rangle}$
+
         <header>
-            <div class="col-sm-10 col-sm-offset-1">
-                <ul id="share_links">
+                <!-- <ul id="share_links">
                     <li><a href="https://github.com/sglpolla" target="_blank">
                         <img src="https://github.com/favicon.ico" alt="github">
                     </a></li>
                     <li><a href="https://www.facebook.com/lenkamathstuition/" target="_blank">
                         <img src="{% static 'css/img/fb.png' %}" alt="fb">
                     </a></li>
-                </ul>
-                <h1 id="logo">
+                </ul> -->
+                <!-- <h1 id="logo">
                     <a href="/">Lenka Pollachová</a>
-                </h1>
-                <ul id="nav">
+                </h1> -->
+            
+            <nav>
+            <img src="{% static 'css/img/logo.png' %}" alt="Lenka Pollachová">
+                <ul>
                     <li>
                         <a href="/">
                             Home
                         </a>
                     </li>
                     <li>
-                        <a href="#">Web Development</a>
+                        <a href="/webdev/">Web Development</a>
                     </li>
                     <li>
-                        <a href="#">Maths Tuition</a>
+                        <a href="/tuition/">Maths Tuition</a>
                     </li>
                     <li>
                         <a href="/blog/">Blog</a>
@@ -52,28 +68,26 @@
                         <a href="/">About</a>
                     </li>
                 </ul>
-            </div>
+            </nav>
+                
         </header>
 
-
-        <div class="col-sm-10 col-sm-offset-1">
-            <h2 class="nav-bar"> <!-- The black bar is in the CSS -->
+            <p class="text-right"> <!-- The black bar is in the CSS -->
                 {% if user.is_authenticated %}
                 {% block topbar %}
                 {% endblock %}
                 {% else %}
-                <a class="nav-bar-text" href="/admin/">
+                <a href="/admin/">
                     Login
                 </a>
                 {% endif %}
-            </h2>
+            </p>
 
             {% block content %}
             {% endblock %}
-            <footer>
+<!--             <footer>
                 {% block bottom-nav %}{% endblock %}
-            </footer>
-        </div>
+            </footer> -->
     </body>
 
 </html>
