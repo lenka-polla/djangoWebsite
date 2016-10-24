@@ -33,9 +33,6 @@
                     {% autoescape off %} {{ post.text|linebreaksbr }} {% endautoescape %}
                 </div>
             </div>
-                <a href="{% url 'post_specific' pk=post.pk %}" class="read_more text-center"><button class="btn btn-default center-block">
-                    read more
-                </button></a>
             <hr>
         </article>
 {% endblock %}
